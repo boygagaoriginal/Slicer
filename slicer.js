@@ -33,9 +33,22 @@
     width  = obj.elem.offsetWidth;
     height = obj.elem.offsetHeight;
 
+    // Hidden image?
+    if(!width || !height) {
+      _tmp = obj.elem.cloneNode();
+      _absolute(_tmp);
+      _tmp.style.visibility = 'hidden';
+      d.body.appendChild(_tmp);
+      width  = _tmp.offsetWidth;
+      height = _tmp.offsetHeight;
+      d.body.removeChild(_tmp);
+    }
+
     // Wrap the image.
     _tmp = d.createElement('div');
     _tmp.className = 'slicer';
+    _tmp.style.width    = width  + 'px';
+    _tmp.style.height   = height + 'px';
     _tmp.style.position = 'relative';
     obj.elem.parentNode.appendChild(_tmp);
     _tmp.appendChild(obj.elem);
@@ -47,8 +60,8 @@
     _tmp.className = 'slices';
 
     _absolute(_tmp);
-    _tmp.style.width  = width  + 'px';
-    _tmp.style.height = height + 'px';
+    _tmp.style.right  = 0;
+    _tmp.style.bottom = 0;
 
     obj._slices = _tmp;
 
@@ -101,7 +114,6 @@
   w.Slicer = function(elem, args) {
     if(typeof elem != 'object') return false;
 
-    // Is it a jQuery object?
     if(typeof jQuery != 'undefined') {
       if(elem instanceof jQuery) {
         this._jQuery = true;
