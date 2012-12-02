@@ -10,13 +10,13 @@ You can use this using **Vanilla JS** or with **jQuery** (both will do exactly t
 #### Standard usage
 
     var obj = new Slicer(document.getElementsByTagName('img')[0], {
-      grid: 5
+      grid: 4
     });
 
 #### jQuery usage
 
     var obj = new Slicer($('img'), {
-      grid: 5
+      grid: 4
     });
 
 ## Return
