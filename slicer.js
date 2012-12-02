@@ -1,11 +1,12 @@
 /*
  * Slicer.js
  *
- * Copyright 2012, Daryl Ginn http://daryl.im
+ * Copyright 2012, Daryl Ginn - http://daryl.im
  * Released under the WTFPL license
  * http://sam.zoy.org/wtfpl/
  *
- * Version 1.0
+ * Github:  http://github.com/daryl/Slicer
+ * Version: 1.0
  */
 
 ;(function(w, d) {
