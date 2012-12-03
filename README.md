@@ -9,20 +9,50 @@ You can use this using **Vanilla JS** or with **jQuery** (both will do exactly t
 
 #### Standard usage
 
-    var obj = new Slicer(document.getElementsByTagName('img')[0], {
-      grid: 4
-    });
+```javascript
+var obj = new Slicer(document.getElementsByTagName('img')[0], {
+  grid: 4
+});
+```
 
 #### jQuery usage
 
-    var obj = new Slicer($('img'), {
-      grid: 4
-    });
+```javascript
+var obj = new Slicer($('img'), {
+  grid: 4
+});
+```
+
+## Output
+
+#### Initial markup
+
+```html
+<img src="cat.jpg" />
+```
+
+#### Expected output
+
+```html
+<div class="slicer">
+  <img src="cat.jpg" />
+  <div class="slices">
+    <!-- Blocks -->
+    <div class="slice">
+      <img src="cat.jpg" />
+    </div>
+    ...
+  </div>
+</div>
+```
 
 ## Return
 
-    Object:
-      blocks: HTMLCollection[16] // Individual blocks
-      image: <img>               // Original image
-      slicer: <div>              // Main wrapper
-      slices: <div>              // Blocks wrapper
+```text
+Object {
+  blocks : HTMLCollection[16] // Individual blocks
+  image  : <img>,             // Original image
+  slicer : <div>,             // Main wrapper
+  slices : <div>              // Blocks wrapper
+}
+```
