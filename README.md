@@ -1,7 +1,7 @@
 # Slicer
 ---
 
-Slice up an image into a manipulatable grid. Currently you can see it's usage on http://daryl.im
+Slice up an image into a manipulatable grid.
 
 ## Usage
 
